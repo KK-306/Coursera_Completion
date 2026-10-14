@@ -10,16 +10,18 @@ import adminRoutes from './routes/admin.js';
 
 const app = express();
 
+// Server configuration
 const PORT = Number(process.env.PORT || 5000);
-const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 const MONGODB_URI = process.env.MONGODB_URI;
+const CLIENT_URL =
+  process.env.CLIENT_URL || 'http://localhost:5173';
 
-// Configure CORS for the frontend
+// Configure CORS for local development and deployed frontend
 const allowedOrigins = [
   CLIENT_URL,
   'http://localhost:5173',
   'http://127.0.0.1:5173',
-];
+].filter(Boolean);
 
 app.use(
   cors({
@@ -31,9 +33,17 @@ app.use(
 // Parse JSON request bodies
 app.use(express.json({ limit: '100kb' }));
 
+// Basic route
+app.get('/', (_req, res) => {
+  res.json({
+    success: true,
+    message: 'CoursePilot API is running.',
+  });
+});
+
 // Health check
 app.get('/api/health', (_req, res) => {
-  res.json({
+  res.status(200).json({
     ok: true,
     service: 'CoursePilot API',
     timestamp: new Date().toISOString(),
@@ -72,7 +82,7 @@ async function startServer() {
   try {
     if (!MONGODB_URI) {
       throw new Error(
-        'MONGODB_URI is missing. Add it to your server/.env file.'
+        'MONGODB_URI is missing. Configure it in Render environment variables.'
       );
     }
 
@@ -82,8 +92,8 @@ async function startServer() {
 
     console.log('MongoDB connected successfully.');
 
-    app.listen(PORT, () => {
-      console.log(`CoursePilot API running at http://localhost:${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`CoursePilot API running on port ${PORT}`);
     });
   } catch (error) {
     console.error('Server startup failed:', error.message);

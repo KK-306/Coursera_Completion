@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
-const API = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API = import.meta.env.VITE_API_BASE_URL || 'https://coursera-completion-backend.onrender.com';
 
 export default function PaymentReturn() {
   const [params] = useSearchParams();

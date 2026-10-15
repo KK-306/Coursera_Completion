@@ -581,20 +581,117 @@ button {
   letter-spacing: 0.5px;
 }
 
+/* Flash Sale & Limited Time Offer Pills */
+.pricing-sale-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
+  border: 1px solid #FECDD3;
+  color: #E11D48;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 10px rgba(225, 29, 72, 0.12);
+  animation: pulseSale 2.5s infinite ease-in-out;
+}
+
+.pricing-sale-pill .sale-fire {
+  font-size: 15px;
+}
+
+.pricing-sale-pill .sale-timer-tag {
+  background: #E11D48;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-left: 4px;
+}
+
+@keyframes pulseSale {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 10px rgba(225, 29, 72, 0.12);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 4px 18px rgba(225, 29, 72, 0.25);
+  }
+}
+
+.limited-time-wrapper {
+  margin-bottom: 12px;
+}
+
+.limited-time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FECACA;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.3px;
+}
+
+.limited-time-badge .fire-icon {
+  font-size: 12px;
+}
+
 .pricing-header {
   margin-bottom: 20px;
 }
 
 .course-count-title {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 800;
   color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+}
+
+.price-container {
+  margin: 8px 0 10px;
+}
+
+.price-discount-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.original-price-cut {
+  font-size: 16px;
+  font-weight: 700;
+  color: #94A3B8;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #EF4444;
+}
+
+.discount-tag {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+  display: inline-block;
 }
 
 .price-tag {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   color: var(--blue);
   line-height: 1;
 }
@@ -603,13 +700,30 @@ button {
   font-size: 22px;
   font-weight: 800;
   margin-right: 2px;
-  margin-top: 2px;
 }
 
 .price-tag .price-number {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 900;
   letter-spacing: -1px;
+}
+
+.price-tag .price-period {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+  margin-left: 6px;
+}
+
+.savings-callout {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #15803D;
+  display: inline-block;
 }
 
 .package-features {
@@ -1717,9 +1831,32 @@ button {
   gap: 2px;
 }
 
+.pkg-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
 .pkg-option-info strong {
   font-size: 0.84rem;
   color: #071B3B;
+}
+
+.pkg-discount-pill {
+  background: #DC2626;
+  color: #FFFFFF;
+  font-size: 8px;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 3px;
+  letter-spacing: 0.2px;
+}
+
+.pkg-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
 }
 
 .pkg-option-info .pkg-price {
@@ -1728,8 +1865,16 @@ button {
   color: #0056D2;
 }
 
+.pkg-cut-price {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  text-decoration: line-through;
+  text-decoration-color: #EF4444;
+  font-weight: 600;
+}
+
 .pkg-option-info small {
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   color: #64748B;
 }
 
@@ -1816,17 +1961,42 @@ button {
   flex-direction: column;
 }
 
-.submit-summary span {
+.submit-summary .summary-title {
   font-size: 0.75rem;
   color: #64748B;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.summary-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
 .submit-summary strong {
   font-size: 1.4rem;
   font-weight: 800;
   color: #071B3B;
+}
+
+.summary-cut-price {
+  font-size: 0.95rem;
+  color: #94A3B8;
+  text-decoration: line-through;
+  text-decoration-color: #EF4444;
+  font-weight: 600;
+}
+
+.summary-pill {
+  background: #10B981;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 99px;
+  letter-spacing: 0.2px;
 }
 
 .submit-summary small {

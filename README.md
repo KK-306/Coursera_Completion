@@ -59,13 +59,13 @@ Open the local URL printed by Vite, usually `http://localhost:5173`.
 - Implement rate limiting, spam protection, operational monitoring, and email notifications before production.
 - Have a qualified developer review the payment and webhook code before accepting live payments.
 
-## 5. Package Prices
+## 5. Package Prices (Limited Time Offer - 40% OFF)
 
 The server controls package prices. Do not trust a price supplied by the browser.
 
-- Single Sprint, 1 Coursera course: Rs.99
-- Duo Saver, 2 Coursera courses: Rs.169
-- Fast Track, 3 Coursera courses: Rs.229
-- Full Bundle, 4 Coursera courses: Rs.279
+- Single Sprint, 1 Coursera course: Rs.59 (was Rs.99 - 40% OFF)
+- Duo Saver, 2 Coursera courses: Rs.99 (was Rs.169 - 41% OFF)
+- Fast Track, 3 Coursera courses: Rs.137 (was Rs.229 - 40% OFF)
+- Full Bundle, 4 Coursera courses: Rs.167 (was Rs.279 - 40% OFF)
 
 These represent guided completion support packages, not completion of graded work by a third party.

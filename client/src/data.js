@@ -2,7 +2,9 @@ export const packages = [
   {
     id: 'support-1',
     count: 1,
-    price: 99,
+    price: 59,
+    originalPrice: 99,
+    discount: '40% OFF',
     label: '1 Course',
     features: [
       'Complete 1 Coursera course',
@@ -15,7 +17,9 @@ export const packages = [
   {
     id: 'support-2',
     count: 2,
-    price: 169,
+    price: 99,
+    originalPrice: 169,
+    discount: '40% OFF',
     label: '2 Courses',
     features: [
       'Complete 2 Coursera courses',
@@ -29,7 +33,9 @@ export const packages = [
   {
     id: 'support-3',
     count: 3,
-    price: 229,
+    price: 137,
+    originalPrice: 229,
+    discount: '40% OFF',
     label: '3 Courses',
     features: [
       'Complete 3 Coursera courses',
@@ -42,7 +48,9 @@ export const packages = [
   {
     id: 'support-4',
     count: 4,
-    price: 279,
+    price: 167,
+    originalPrice: 279,
+    discount: '40% OFF',
     label: '4 Courses',
     features: [
       'Complete 4 Coursera courses',

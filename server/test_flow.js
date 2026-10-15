@@ -22,17 +22,17 @@ function assert(condition, message) {
 async function runTests() {
   // Test 1: Pricing Packages
   console.log('1. Testing Fixed Package Pricing:');
-  assert(PACKAGES['support-1'].price === 99, 'Package 1 course = ₹99');
-  assert(PACKAGES['support-2'].price === 169, 'Package 2 courses = ₹169');
-  assert(PACKAGES['support-3'].price === 229, 'Package 3 courses = ₹229');
-  assert(PACKAGES['support-4'].price === 279, 'Package 4 courses = ₹279');
+  assert(PACKAGES['support-1'].price === 59, 'Package 1 course = ₹59');
+  assert(PACKAGES['support-2'].price === 99, 'Package 2 courses = ₹99');
+  assert(PACKAGES['support-3'].price === 137, 'Package 3 courses = ₹137');
+  assert(PACKAGES['support-4'].price === 167, 'Package 4 courses = ₹167');
 
   const p1 = getPackageByIdOrCount('support-1', 1);
-  assert(p1 && p1.price === 99, 'Lookup by id "support-1" yields ₹99');
+  assert(p1 && p1.price === 59, 'Lookup by id "support-1" yields ₹59');
   const p3 = getPackageByIdOrCount(null, 3);
-  assert(p3 && p3.price === 229, 'Lookup by count 3 yields ₹229');
+  assert(p3 && p3.price === 137, 'Lookup by count 3 yields ₹137');
   const p4 = getPackageByIdOrCount('support-4');
-  assert(p4 && p4.price === 279, 'Lookup by id "support-4" yields ₹279');
+  assert(p4 && p4.price === 167, 'Lookup by id "support-4" yields ₹167');
   const invalidP = getPackageByIdOrCount('invalid-package', 99);
   assert(invalidP === null, 'Invalid package correctly returns null');
 
@@ -90,7 +90,7 @@ async function runTests() {
   const validationErr = testReg.validateSync();
   assert(!validationErr, 'Registration schema validation succeeds with all required fields');
   assert(testReg.paymentStatus === 'PENDING', 'Initial payment status is strictly PENDING');
-  assert(testReg.amount === 169, 'Calculated package amount is strictly ₹169');
+  assert(testReg.amount === 99, 'Calculated package amount is strictly ₹99');
 
   // Test reference submission simulation
   testReg.upiReference = '428901234567';

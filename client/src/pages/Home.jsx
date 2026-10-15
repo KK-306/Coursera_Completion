@@ -239,9 +239,14 @@ export default function Home() {
       <section className="pricing-section" id="pricing">
         <div className="container">
           <div className="section-heading text-center">
+            <div className="pricing-sale-pill">
+              <span className="sale-fire">&#128293;</span>
+              <span className="sale-text">LIMITED TIME OFFER &bull; FLAT 40% OFF</span>
+              <span className="sale-timer-tag">ENDS SOON</span>
+            </div>
             <span className="section-eyebrow">PRICING</span>
             <h2>Choose Your Learning Package</h2>
-            <p>Affordable and transparent pricing for Coursera course completion.</p>
+            <p>Affordable and transparent pricing for Coursera course completion with our exclusive 40% discount.</p>
           </div>
 
           <div className="pricing-cards-grid">

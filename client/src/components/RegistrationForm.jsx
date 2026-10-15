@@ -174,9 +174,17 @@ export default function RegistrationForm({ initialPackageId, onSuccess, onCancel
                   onChange={() => setFormData({ ...formData, packageId: pkg.id })}
                 />
                 <div className="pkg-option-info">
-                  <strong>{pkg.label}</strong>
-                  <span className="pkg-price">&#8377;{pkg.price}</span>
-                  <small>24&ndash;48 hrs</small>
+                  <div className="pkg-label-row">
+                    <strong>{pkg.label}</strong>
+                    <span className="pkg-discount-pill">40% OFF</span>
+                  </div>
+                  <div className="pkg-price-row">
+                    <span className="pkg-price">&#8377;{pkg.price}</span>
+                    {pkg.originalPrice && (
+                      <span className="pkg-cut-price">&#8377;{pkg.originalPrice}</span>
+                    )}
+                  </div>
+                  <small>Limited offer &bull; 24&ndash;48 hrs</small>
                 </div>
               </label>
             ))}
@@ -264,9 +272,15 @@ export default function RegistrationForm({ initialPackageId, onSuccess, onCancel
         {/* Amount Summary and Submit */}
         <div className="form-submit-row">
           <div className="submit-summary">
-            <span>Total Payable:</span>
-            <strong>&#8377;{selectedPkg.price}</strong>
-            <small>One-time &bull; Secure UPI</small>
+            <span className="summary-title">Total Payable (40% OFF):</span>
+            <div className="summary-price-wrap">
+              <strong>&#8377;{selectedPkg.price}</strong>
+              {selectedPkg.originalPrice && (
+                <span className="summary-cut-price">&#8377;{selectedPkg.originalPrice}</span>
+              )}
+              <span className="summary-pill">Save 40%</span>
+            </div>
+            <small>Limited time offer &bull; Secure UPI</small>
           </div>
           <button type="submit" className="btn-submit-reg" disabled={submitting}>
             {submitting ? 'Generating Order...' : 'Continue to UPI QR Payment \u2192'}
